@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Face Recognition</title>
+    <script defer src="face-api.min.js"></script>
+    <script defer src="face-recognition.js"></script>
+    <script></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="face-recognition.css" />
+  </head>
+  <body class="faceRecognitionLayout">
+    <div class="face-id">
+      <video id="video" width="1080" height="720" autoplay></video>
+    </div>
+    <div class="attendanceIdentity">
+      <div class="profileInfo">
+        <div class="totalAttendance">
+          <img src="images/userImg.png" alt="userImg" />
+          <p name="attendanceCount">10</p>
+        </div>
+        <div class="profilePic">
+          <img src="images/flower.jpg" alt="User Image" />
+        </div>
+        <div class="profileName"><h2>Salvin Thilak S</h2></div>
+        <!-- <div class="regNumber"><p>20RNSB7143</p></div> -->
+        <div class="attendanceInfo"><h3>Attendance Marked</h3></div>
+      </div>
+      <div class="navButton">
+        <div class="naveHome">
+          <a href="/facultyDash"><img src="images/home.png" alt="Home" /></a>
+        </div>
+        <div class="navBack">
+          <a href="/markAttendance"><img src="images/back.png" alt="Back" /></a>
+        </div>
+        <div class="cancelMarkingAttendace">
+          <a href="/markAttendance"
+            ><img src="images/close.png" alt="Close"
+          /></a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

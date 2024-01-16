@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Control Centre</title>
+    <script src="js/main.js"></script>
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div class="side-bar">
+      <div class="nav-bar">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon"><i class="bx bx-id-card"></i></span>
+              <span class="nav-title">Admin Console</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"><i class="bx bx-home"></i></span>
+              <span class="nav-title">Dashboard</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><i class="bx bx-message-rounded-detail"></i
+              ></span>
+              <span class="nav-title">Messages</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"><i class="bx bx-cog"></i></span>
+              <span class="nav-title">Settings</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <span class="icon"><i class="bx bx-log-out"></i></span>
+              <span class="nav-title">Signout</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="main-frame-top">
+        <div class="top-bar">
+          <div class="toggle"><i class="bx bx-menu"></i></div>
+          <div class="user-pic">
+            <img
+              src="/public/images/default-profile-img.png"
+              alt="User Profile Image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let toggle = document.querySelector(".toggle");
+      let navigation = document.querySelector(".nav-bar");
+      let main = document.querySelector(".main-frame-top");
+
+      toggle.onclick = function () {
+        navigation.classList.toggle("active");
+        main.classList.toggle("active");
+      };
+
+      let list = document.querySelectorAll(".nav-bar li");
+      function activeLink() {
+        list.forEach((item) => item.classList.remove("hovered"));
+        this.classList.add("hovered");
+      }
+      list.forEach((item) => item.addEventListener("mouseover", activeLink));
+    </script>
+  </body>
+</html>

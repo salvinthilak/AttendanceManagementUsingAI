@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body class="login_body">
+    <section class="login_back">
+      <div class="color"></div>
+      <div class="color"></div>
+      <div class="color"></div>
+      <div class="login_box">
+        <div class="square" style="--i: 0"></div>
+        <div class="square" style="--i: 1"></div>
+        <div class="square" style="--i: 2"></div>
+        <div class="square" style="--i: 3"></div>
+        <div class="square" style="--i: 4"></div>
+
+        <div class="login_container">
+          <div class="login_form">
+            <h2>Admin Login</h2>
+            <form class="login_form" action="/admin" method="post">
+              <div class="inputBox">
+                <input type="text" placeholder="Email ID" name="emailId" />
+              </div>
+              <div class="inputBox">
+                <input type="password" placeholder="Password" name="psswd" />
+              </div>
+              <div class="inputBox">
+                <input type="submit" value="Login" />
+              </div>
+              <!-- <p class="forget">Forgot Password ? <a href="/">Click Here</a></p>
+              <p class="signup">Institution Member ? <a href="#">Sign Up</a></p> -->
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

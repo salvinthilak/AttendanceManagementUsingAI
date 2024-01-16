@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="main.js"></script>
+  </head>
+  <body>
+    <div class="studentDash" action="/markAttendance">
+      <div class="side-nav">
+        <div class="userProfile">
+          <img src="images/flower.jpg" alt="userImage" class="userImage" />
+          <div>
+            <h2 name="userName">Salvin Thilak S</h2>
+          </div>
+          <img src="images/star.png" class="starImg" />
+        </div>
+        <ul class="dashPng">
+          <li>
+            <a href="/facultyDash"
+              ><img src="images/dashboard.png" alt="Dashboard" />
+              <p>Dashboard</p></a
+            >
+          </li>
+          <li>
+            <a href="/markAttendance"
+              ><img src="images/profile.png" alt="Profile" />
+              <p>My Class</p></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><img src="images/reports.png" alt="Reports" />
+              <p>Statistics</p></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><img src="images/message.png" alt="Messages" />
+              <p>Messages</p></a
+            >
+          </li>
+
+          <li>
+            <a href="#"
+              ><img src="images/profile-edit.png" alt="Edit Profile" />
+              <p>Edit Profile</p></a
+            >
+          </li>
+        </ul>
+        <ul class="dashPng">
+          <li>
+            <a href="#"
+              ><img src="images/logout.png" alt="#" />
+              <p>Logout</p></a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="contentBox">
+        <div class="dashInfo">
+          <div>
+            <h3>Hello ,</h3>
+            <h2 name="userName" style="font-size: 1.5em">Salvin Thilak S</h2>
+          </div>
+          <div style="display: flex; flex-direction: row; align-items: center">
+            <img src="images/flower.jpg" alt="userImage" class="userImage" />
+          </div>
+        </div>
+        <div class="markAttendance">
+          <h2>Automated Attendance Marking System</h2>
+          <form class="attendanceForm" action="/sortStudents" method="post">
+            <div>
+              Course :<select name="selectCourse" id="#" required>
+                <option value="">Select Course</option>
+                <option value="BA">BA</option>
+                <option value="BBA">BBA</option>
+                <option value="BCom">BCom</option>
+                <option value="BCA">BCA</option>
+                <option value="BSc Computer Science">
+                  BSc Computer Science
+                </option>
+                <option value="BSc BtGt">BSc BtGt</option>
+                <option value="BSc MbBt">BSc MbBt</option>
+              </select>
+            </div>
+            <div>
+              Year :<select name="selectYear" id="#" required>
+                <option value="">Select Year</option>
+                <option value="1">1st Year</option>
+                <option value="2">2nd Year</option>
+                <option value="3">3rd Year</option>
+                <option value="4">4th Year</option>
+              </select>
+            </div>
+            <div>
+              Section :<select name="selectSection" id="#" required>
+                <option value="">Select Section</option>
+                <option value="A">A</option>
+                <option value="B">B</option>
+                <option value="C">C</option>
+                <option value="D">D</option>
+              </select>
+            </div>
+            <input
+              type="submit"
+              class="submitForm"
+              value="View"
+              onclick="viewStudents()"
+            />
+          </form>
+        </div>
+        <div class="recentInfo showStudentsInfo">
+          <h2>User's Details</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Student Name</th>
+                <th>Roll Number</th>
+                <th>Previous Status</th>
+                <th>Attendance</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Salvin Thilak S</td>
+                <td>20RNSB7143</td>
+                <td class="onRoll">Abscent</td>
+                <td class="totalRoll">10</td>
+                <td class="studentInfo">Details</td>
+              </tr>
+              <tr>
+                <td>Salvin Thilak S</td>
+                <td>20RNSB7143</td>
+                <td class="onRoll">Abscent</td>
+                <td class="totalRoll">10</td>
+                <td class="studentInfo">Details</td>
+              </tr>
+              <tr>
+                <td>Salvin Thilak S</td>
+                <td>20RNSB7143</td>
+                <td class="onRoll">Abscent</td>
+                <td class="totalRoll">10</td>
+                <td class="studentInfo">Details</td>
+              </tr>
+            </tbody>
+          </table>
+          <div>
+            <a href="/attendance" class="markAIAttendance">Mark Attendance</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      function viewStudents() {
+        let showClass = document.getElementsByClassName("showStudentsInfo");
+        showClass.style.display == "block";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registaration Form</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="studentDash">
+      <div class="contentBox">
+        <div class="dashInfo">
+          <div>
+            <!-- <h3>Welcome to ,</h3> -->
+            <h2 name="userName" style="font-size: 1.5em">
+              Registaration Successful
+            </h2>
+          </div>
+          <div style="display: flex; flex-direction: row; align-items: center">
+            <img src="images/flower.jpg" alt="userImage" class="userImage" />
+          </div>
+        </div>
+        <div class="registrationOne">
+          <div class="progressBar">
+            <div class="circleNon">
+              <div class="circleGreen"></div>
+            </div>
+            <div class="progressLine progressLine3"></div>
+            <div class="circleNon">
+              <div class="circleGreen"></div>
+            </div>
+            <div class="progressLine" style="width: 98%"></div>
+            <div class="circleNon">
+              <div class="circleGreen"></div>
+            </div>
+          </div>
+          <form class="registrationForm profileUpload" action="/regSuccessful">
+            <div class="faceInstruction">
+              <h1>Face Recognition Registration Process</h1>
+              <div>
+                <img src="images/verified.jpg" alt="" />
+              </div>
+              <div class="regSuccess">
+                <h2 style="color: lightgreen">REGISTRATION SUCCESSFUL</h2>
+                <h3>
+                  This process might take time for the approval. <br />
+                  Please wait while the Admin reviews your Request and Approves
+                </h3>
+              </div>
+            </div>
+
+            <a href="/" class="submitbtn">HOME</a>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

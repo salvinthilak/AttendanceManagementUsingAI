@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registaration Form</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="studentDash">
+      <div class="contentBox">
+        <div class="dashInfo">
+          <div>
+            <h3>Hello ,</h3>
+            <h2 name="userName" style="font-size: 1.5em">Salvin Thilak S</h2>
+          </div>
+          <div style="display: flex; flex-direction: row; align-items: center">
+            <img src="images/flower.jpg" alt="userImage" class="userImage" />
+          </div>
+        </div>
+        <div class="registrationOne">
+          <div class="progressBar">
+            <div class="circleNon">
+              <div class="circleGreen"></div>
+            </div>
+            <div class="progressLine progressLine3"></div>
+            <div class="circleNon">
+              <div class="circleGreen"></div>
+            </div>
+            <div class="progressLine" style="width: 98%"></div>
+            <div class="circleNon">
+              <div class="circleGreen"></div>
+            </div>
+          </div>
+          <form
+            class="registrationForm profileUpload"
+            action="/registration3"
+            method="post"
+          >
+            <div class="faceInstruction">
+              <h1>Face Recognition Registration Process</h1>
+              <p>
+                Choose two different images of yourself which will clearly show
+                your face. You can also use a cropped image. Make sure you are
+                the only person in the image. Two different images of you is
+                nessassary.
+              </p>
+              <p><b>Rules to be followed:</b></p>
+              <p>1. Rename the FileName to "1.jpg" & "2.jpg".</p>
+              <p>2. No other file other than JPG files will be accepted.</p>
+              <p>3. Both the images must be different.</p>
+            </div>
+            <input
+              type="file"
+              name="myProfilePic"
+              id="profilePic"
+              accept=".jpeg,.png,.jpg"
+            /><input
+              type="file"
+              name="myProfilePic"
+              id="profilePic"
+              accept=".jpeg,.png,.jpg"
+            />
+            <input type="submit" class="submitbtn" value="SUBMIT" />
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

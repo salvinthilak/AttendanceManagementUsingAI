@@ -1,0 +1,1023 @@
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  body {
+    background: #212121;
+    color: white;
+  }
+}
+@media (prefers-color-scheme: light) {
+  body {
+    background: white;
+    color: #212121;
+  }
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+li {
+  list-style: none;
+}
+/* Navigation side bar */
+
+.side-bar {
+  position: relative;
+  width: 100%;
+}
+.nav-bar {
+  position: fixed;
+  width: 300px;
+  height: 100%;
+  background: #287bff;
+  border-left: 10px solid #287bff;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.nav-bar.active {
+  width: 90px;
+}
+.nav-bar ul {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+.nav-bar ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+.nav-bar ul li:hover,
+.nav-bar ul li.hovered {
+  background: white;
+}
+.nav-bar ul li:nth-child(1) {
+  margin-top: 10px;
+  margin-bottom: 40px;
+  pointer-events: none;
+}
+.nav-bar ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  color: white;
+}
+
+.nav-bar ul li:hover a,
+.nav-bar ul li.hovered a {
+  color: #287bff;
+}
+.icon {
+  position: relative;
+  display: block;
+  min-width: 80px;
+  height: 60px;
+  line-height: 70px;
+  text-align: center;
+}
+.icon i {
+  font-size: 1.75em;
+}
+.nav-title {
+  position: relative;
+  display: block;
+  padding: 0 10px;
+  height: 60px;
+  line-height: 60px;
+  text-align: start;
+}
+.nav-bar ul li:hover a::before,
+.nav-bar ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 35px 35px 0 10px white;
+  pointer-events: none;
+}
+.nav-bar ul li:hover a::after,
+.nav-bar ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -50px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: transparent;
+  box-shadow: 35px -35px 0 10px white;
+  pointer-events: none;
+}
+
+/* main-frame ( Toggle ) */
+
+.main-frame-top {
+  position: absolute;
+  width: calc(100% - 300px);
+  left: 300px;
+  min-height: 100vh;
+  transition: 0.5s;
+}
+.main-frame-top.active {
+  width: calc(100% - 90px);
+  left: 90px;
+}
+.top-bar {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+.toggle {
+  position: relative;
+  top: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.5em;
+  cursor: pointer;
+}
+.user-pic {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 1px 3px 5px 1px grey;
+}
+.user-pic img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ##################################### */
+/* Admin Dashboard */
+/* ##################################### */
+
+.login_body {
+  overflow: hidden;
+}
+.login_back {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #f1f4f9, #dff1ff);
+}
+.login_back .color {
+  position: absolute;
+  filter: blur(150px);
+}
+.login_back .color:nth-child(1) {
+  top: -350px;
+  left: 100px;
+  width: 600px;
+  height: 600px;
+  background: #ff359b;
+}
+.login_back .color:nth-child(2) {
+  bottom: -150px;
+  width: 500px;
+  height: 500px;
+  background: #fffd87;
+}
+.login_back .color:nth-child(3) {
+  bottom: 50px;
+  right: 100px;
+  width: 500px;
+  height: 500px;
+  background: #00d2ff;
+}
+
+.login_box {
+  position: relative;
+}
+.square {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  animation: animate 10s linear infinite;
+  animation-delay: calc(-1s * var(--i));
+}
+@keyframes animate {
+  0%,
+  100% {
+    transform: translateY(-40px);
+  }
+  50% {
+    transform: translateY(40px);
+  }
+}
+.square:nth-child(1) {
+  top: -50px;
+  right: -60px;
+  width: 100px;
+  height: 100px;
+}
+.square:nth-child(2) {
+  top: 150px;
+  left: -100px;
+  width: 120px;
+  height: 160px;
+  z-index: 2;
+}
+.square:nth-child(3) {
+  bottom: 50px;
+  right: -40px;
+  width: 80px;
+  height: 80px;
+  z-index: 2;
+}
+.square:nth-child(4) {
+  bottom: -80px;
+  left: 100px;
+  width: 50px;
+  height: 50px;
+}
+.square:nth-child(5) {
+  top: -80px;
+  left: 140px;
+  width: 60px;
+  height: 60px;
+}
+
+.login_container {
+  position: relative;
+  width: 440px;
+  min-height: 500px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 25px 45px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+}
+.login_form {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 40px;
+}
+.login_form h2 {
+  position: relative;
+  font-size: 24px;
+  font-weight: 600px;
+  letter-spacing: 1px;
+  margin-bottom: 35px;
+}
+.login_form h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 70px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+.inputBox {
+  width: 100%;
+  margin-top: 20px;
+}
+.inputBox input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  outline: none;
+  padding: 10px 20px;
+  border-radius: 35px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-right: 1px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 1rem;
+}
+
+.inputBox input[type="submit"] {
+  color: #666;
+  cursor: pointer;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+.inputBox input[type="submit"]:hover {
+  color: black;
+  font-weight: 700;
+}
+
+.forget,
+.signup {
+  margin-top: 10px;
+}
+.forget a,
+.signup a {
+  font-weight: 600;
+}
+.forget a:hover,
+.signup a:hover {
+  color: #287bff;
+  font-weight: 400;
+}
+.login_form p:hover {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+/* ##################################### */
+/* Students Dashboard */
+/* ##################################### */
+
+.studentDash,
+.profileBackground {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.studentDash {
+  font-family: "Poppins", sans-serif;
+  /* background-image: url(/public/images/background.png); */
+  background-image: url(/images/background.png);
+  display: flex;
+  flex-direction: row;
+}
+.side-nav {
+  width: 120px;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  left: 0;
+  padding: 30px 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  transition: width 0.5s;
+}
+.side-nav:hover {
+  width: 400px;
+  padding: 10px;
+}
+.userProfile {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 60%;
+  font-size: 1em;
+  padding: 15px;
+  border-radius: 8px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.userProfile div {
+  display: none;
+}
+.userProfile h2 {
+  font-size: 15px;
+  font-weight: 600;
+  white-space: nowrap;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.userImage {
+  width: 40px;
+  border-radius: 50%;
+  margin: auto;
+}
+.starImg {
+  width: 20px;
+  margin: 5px;
+  display: none;
+}
+.dashPng {
+  list-style: none;
+  padding: 0 15px;
+}
+.dashPng li {
+  margin: 30px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.dashPng a img {
+  width: 30px;
+  margin-right: 10px;
+}
+.dashPng li a p {
+  white-space: nowrap;
+  display: none;
+}
+.dashPng li a {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 5px;
+}
+.side-nav:hover .userProfile div {
+  display: block;
+}
+.side-nav:hover .userProfile {
+  width: 95%;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+.side-nav:hover .starImg {
+  display: block;
+}
+.side-nav:hover .userImage {
+  margin: 0;
+}
+.side-nav:hover .dashPng li a p {
+  display: block;
+  color: #ffffff;
+  font-weight: 600;
+}
+.side-nav:hover .dashPng li a img {
+  margin-right: 15px;
+}
+.side-nav:hover .dashPng li {
+  justify-content: flex-start;
+}
+
+.dashPng li:hover {
+  width: 100%;
+  padding: 5px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+}
+
+.contentBox {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  transition: 0.5s;
+  padding: 40px;
+}
+.dashInfo {
+  width: 100%;
+  padding: 15px 30px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+.dashInfo div h2 {
+  margin-right: 15px;
+  font-size: 1.05em;
+}
+.dashInfo img:hover {
+  cursor: pointer;
+}
+.topInfo {
+  overflow: hidden;
+  position: sticky;
+  margin: 5px;
+  padding: 20px;
+  width: 100%;
+  height: 240px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  background: rgba(255, 255, 255, 0.5);
+}
+.basicInfo {
+  overflow: hidden;
+  margin-left: 10px;
+  min-width: 390px;
+  height: 200px;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 0 20px 0px #a1a1a1;
+  background: rgba(255, 255, 255, 0.3);
+  transition: all 300ms ease;
+}
+.basicInfo:hover {
+  box-shadow: none;
+}
+.moreInfo {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.userProfileInfo {
+  position: sticky;
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 450px;
+  height: 700px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.otherInfo {
+  margin-left: 30px;
+  border-radius: 10px;
+  min-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.3);
+}
+/* ######################################################################################################## */
+/* User Profile Registration*/
+/* ######################################################################################################## */
+.registrationOne {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+.progressBar {
+  position: absolute;
+  width: 90%;
+  top: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.circleNon {
+  position: relative;
+  background: rgba(255, 255, 255, 0.3);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+.circleGreen {
+  position: absolute;
+  top: 5%;
+  bottom: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid rgba(5, 75, 32, 0.5);
+  background: rgb(0, 255, 0);
+  z-index: 1;
+}
+.progressLine {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  width: 49%;
+  height: 10px;
+  left: 1%;
+  top: 20px;
+}
+.progressLine2 {
+  background: rgb(0, 255, 0);
+}
+.progressLine3 {
+  width: 98%;
+  background: rgb(0, 255, 0);
+}
+.registrationForm {
+  overflow: hidden;
+  position: relative;
+  width: 90%;
+  height: 88%;
+  top: 50px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+}
+.splitForm {
+  width: 50%;
+  padding: 10px;
+}
+.splitForm div {
+  padding: 20px;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+}
+.splitForm div input,
+.splitForm div select {
+  padding: 10px;
+  font-size: 1.015em;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  margin-top: 10px;
+}
+.splitForm div input[type="radio"] {
+  top: 20px;
+  position: relative;
+}
+.submitbtn {
+  position: absolute;
+  bottom: 80px;
+  padding: 15px 80px;
+  border-radius: 10px;
+  border: 3px solid rgba(18, 68, 2, 0.3);
+  background: rgba(0, 255, 21, 0.911);
+  font-size: 1.25em;
+  color: green;
+  font-weight: 600;
+}
+.submitbtn:hover {
+  color: white;
+  font-weight: 800;
+  transition: 20ms;
+}
+.profileUpload {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  max-height: 90%;
+  top: 30px;
+}
+.profileUpload label img {
+  border-radius: 50%;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: inline-block;
+  width: 250px;
+  height: 250px;
+  margin: 10px;
+}
+.profileUpload h3 {
+  font-size: 2em;
+  padding: 10px;
+}
+.profileUpload p {
+  font-size: 1em;
+  padding: 10px;
+}
+.profileUpload input[type="file"] {
+  margin: 10px;
+  padding: 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 1.25em;
+  font-weight: 600;
+}
+.faceInstruction {
+  top: 200px;
+  max-width: 1080px;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+.faceInstruction div img {
+  margin: 20px;
+  padding: 10px;
+  height: 150px;
+  width: 150px;
+}
+.faceInstruction {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.regSuccess {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ######################################################################################################## */
+/* User Profile */
+/* ######################################################################################################## */
+
+.profileBackground {
+  /* background-image: url(/images/background-profile.png); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90vh;
+}
+.profileCard {
+  max-width: 420px;
+  height: 70%;
+  color: #fff;
+  text-align: center;
+  padding: 50px 35px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(5px);
+}
+.profileEdit {
+  color: rgb(255, 255, 255);
+  position: absolute;
+  top: 10px;
+  right: 20px;
+}
+.profileEdit :hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #3c3c3c;
+}
+.profileEdit i {
+  text-decoration: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+}
+.profileCard img {
+  width: 140px;
+  border-radius: 50%;
+}
+.profileCard h2 {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 40px;
+}
+.profileCard p {
+  font-size: 18px;
+  margin: 10px auto;
+  max-width: 330px;
+}
+.profileCard .links img {
+  width: 40px;
+  border-radius: 50%;
+  margin: 10px 5px;
+}
+.profileCard .links img:hover {
+  background: #ff01cf;
+}
+.messageMe {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: 500;
+  background: #fff;
+  color: #ff01cf;
+  padding: 10px 30px;
+  margin-top: 30px 10px;
+  border-radius: 30px;
+}
+.messageMe:hover {
+  font-weight: 700;
+}
+.basicInfo {
+  position: relative;
+}
+.basicInfo span {
+  padding: 10px;
+  border-radius: 50%;
+  color: white;
+  font-size: 2rem;
+}
+.tHoursToday span {
+  background: coral;
+}
+.tHoursMonth span {
+  background: violet;
+}
+.tClassToday span {
+  background: lightgreen;
+}
+.tClassMonth span {
+  background: darkorange;
+}
+.basicInfo h3 {
+  padding: 5px;
+}
+.basicInfo h1 {
+  padding: 5px;
+}
+.basicInfo p {
+  color: rgb(245, 245, 245);
+  margin-bottom: 5px;
+  padding: 5px;
+  font-size: 1rem;
+}
+.basicInfo div {
+  position: absolute;
+  top: 27%;
+  right: 6%;
+}
+.basicInfo div svg {
+  padding: 10px;
+  width: 92px;
+  height: 92px;
+  border-radius: 50%;
+}
+.basicInfo div svg {
+  width: 7rem;
+  height: 7rem;
+}
+.basicInfo div p {
+  position: absolute;
+  top: 33%;
+  left: 30%;
+}
+.basicInfo div svg circle {
+  fill: rgba(255, 255, 255, 0.2);
+  stroke: rgb(127, 49, 228);
+  stroke-width: 14px;
+  stroke-linecap: round;
+  transform: translate(5px, 5px);
+  /* stroke-dasharray: 110;
+  stroke-dashoffset: 92; */
+}
+.tHoursTodayPer svg circle {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 20;
+}
+.tHoursMonthPer svg circle {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 40;
+}
+.tClassTodayPer svg circle {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 160;
+}
+.tClassMonthPer svg circle {
+  stroke-dasharray: 200;
+  stroke-dashoffset: 100;
+}
+.upcomingClass {
+  margin-top: 2rem;
+}
+.upcomingClassInfo {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+}
+.upcomingClassInfo div button,
+.upcomingClassInfo div a {
+  min-width: 150px;
+  padding: 12px 20px;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  border: none;
+  box-shadow: 1px 4px 30px rgba(255, 255, 255, 0.1);
+}
+.upcomingClassInfo div button:hover,
+.upcomingClassInfo div a:hover {
+  color: rgb(11, 243, 11);
+  background: rgba(115, 255, 0, 0.3);
+}
+.showStudentsInfo {
+  display: none;
+}
+.recentInfo {
+  margin-top: 2rem;
+}
+.recentInfo h2 {
+  margin-bottom: 0.8rem;
+}
+.recentInfo a {
+  text-align: center;
+  display: block;
+  border-radius: 16px;
+  padding: 20px;
+  margin: 1rem auto;
+  color: rgb(127, 49, 228);
+  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.1);
+}
+.recentInfo a:hover {
+  color: white;
+  font-weight: 600;
+}
+.recentInfo table {
+  color: white;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  transition: all 300ms ease;
+}
+.recentInfo table:hover {
+  box-shadow: none;
+}
+.recentInfo table thead {
+  font-size: 1.1rem;
+}
+.recentInfo table tbody td {
+  height: 2.8rem;
+  border-bottom: 1px solid white;
+  color: #eeeeee;
+}
+.recentInfo table tbody tr:last-child td {
+  border: none;
+}
+.recentInfo table tbody tr .onRoll {
+  color: lightgreen;
+}
+.recentInfo table tbody tr .totalRoll {
+  color: rgb(229, 255, 0);
+}
+.recentInfo table tbody tr .studentInfo {
+  color: rgb(127, 49, 228);
+}
+.recentInfo table tbody tr .studentInfo:hover {
+  color: whitesmoke;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+/* My Class ( Faculty ) */
+
+.attendanceForm {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 30px;
+}
+.attendanceForm div {
+  font-size: 1.1rem;
+}
+.attendanceForm select {
+  min-width: 250px;
+  font-size: 1.1rem;
+  padding: 15px;
+  margin-left: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.3);
+}
+.submitForm,
+.markAIAttendance {
+  min-width: 250px;
+  padding: 15px 20px;
+  font-size: 1.1rem;
+  color: white;
+  font-weight: 600;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  border: none;
+  box-shadow: 1px 4px 30px rgba(255, 255, 255, 0.1);
+}
+.submitForm:hover,
+.markAIAttendance:hover {
+  color: rgb(11, 243, 11);
+  background: rgba(115, 255, 0, 0.3);
+}
+.markAIAttendance {
+  width: 200px;
+}

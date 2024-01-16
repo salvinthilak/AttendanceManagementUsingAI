@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registaration Form</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="studentDash">
+      <div class="contentBox">
+        <div class="dashInfo">
+          <div>
+            <h3>Welcome to,</h3>
+            <h2 name="userName" style="font-size: 1.5em">
+              Faculty Registration Form
+            </h2>
+          </div>
+          <div style="display: flex; flex-direction: row; align-items: center">
+            <img
+              src="/images/default-profile-img.png"
+              alt="userImage"
+              class="userImage"
+            />
+          </div>
+        </div>
+        <div class="registrationOne">
+          <div class="progressBar">
+            <div class="circleNon">
+              <div class="circleGreen"></div>
+            </div>
+            <div class="progressLine"></div>
+            <div class="circleNon">
+              <div class="circleGreen"></div>
+            </div>
+            <div class="progressLine" style="width: 98%"></div>
+            <div class="circleNon">
+              <div class="circleGreen"></div>
+            </div>
+          </div>
+          <form class="registrationForm" action="/facultyReg" method="post">
+            <div class="splitForm">
+              <div>
+                Full Name :<input
+                  type="text"
+                  placeholder="Name"
+                  name="fullName"
+                  required
+                />
+              </div>
+              <div>
+                Email ID :<input
+                  type="text"
+                  placeholder=" Email ID "
+                  name="emailId"
+                />
+              </div>
+              <div>
+                Create Password :<input
+                  type="password"
+                  placeholder=" Create Password "
+                  name="password"
+                />
+              </div>
+            </div>
+            <div class="splitForm">
+              <div>
+                Course :<select
+                  name="selectCourse"
+                  id="selectCourseHere"
+                  placeholder="Select A Course"
+                  required
+                >
+                  <option>Select Course</option>
+                </select>
+              </div>
+              <div>
+                Subject :<select name="subject" id="subjectList" required>
+                  <option value="">Select Subject</option>
+                </select>
+              </div>
+              <div>
+                Year :<select name="year" id="#" required>
+                  <option value="">Joining Year</option>
+                  <option value="2023">2023</option>
+                  <option value="2022">2022</option>
+                  <option value="2021">2021</option>
+                  <option value="2020">2020</option>
+                  <option value="2019">2019</option>
+                  <option value="2018">2018</option>
+                  <option value="2017">2017</option>
+                  <option value="2016">2016</option>
+                  <option value="2015">2015</option>
+                </select>
+              </div>
+            </div>
+            <input
+              type="submit"
+              class="submitbtn"
+              value="Create User"
+              style="width: 100%"
+            />
+          </form>
+        </div>
+      </div>
+    </div>
+    <script>
+      let course = [
+        "BA",
+        "BBA",
+        "BCom",
+        "BCA",
+        "BSc Computer Science",
+        "Bsc BtGt",
+        "Bsc MbGt",
+      ];
+      let BA = [
+        "Foundation Course in English",
+        "Foundation Course in Hindi",
+        "Agricultural Development in India",
+      ];
+      let BBA = ["Financial Accounting", "Microeconomics"];
+      let BCom = [];
+      let BCA = [
+        "English",
+        "Mathematics",
+        "Language",
+        "C++",
+        "Operating Reserch",
+        "Operating System",
+        "Java",
+        "Python",
+      ];
+      let BSc_CS = [];
+      let BSc_BtGt = [];
+      let BSc_MbBt = [];
+
+      let selectCourseHere = document.getElementById("selectCourseHere");
+      let subjectList = document.getElementById("subjectList");
+
+      course.forEach(function addCourse(item) {
+        let option = document.createElement("option");
+        option.text = item;
+        option.value = item;
+        selectCourseHere.appendChild(option);
+      });
+
+      selectCourseHere.onchange = function () {
+        subjectList.innerHTML = "<option></option>";
+        if (this.value == "BA") {
+          addToSubject(BA);
+        }
+        if (this.value == "BBA") {
+          addToSubject(BBA);
+        }
+        if (this.value == "BCom") {
+          addToSubject(BCom);
+        }
+        if (this.value == "BCA") {
+          addToSubject(BCA);
+        }
+        if (this.value == "BSc Computer Science") {
+          addToSubject(BSc_CS);
+        }
+        if (this.value == "BSc BtGt") {
+          addToSubject(BSc_BtGt);
+        }
+        if (this.value == "BSc MbBt") {
+          addToSubject(BSc_MbBt);
+        }
+      };
+
+      function addToSubject(arr) {
+        arr.forEach(function (item) {
+          let option = document.createElement("option");
+          option.text = item;
+          option.value = item;
+          subjectList.appendChild(option);
+        });
+      }
+    </script>
+  </body>
+</html>

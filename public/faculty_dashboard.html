@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
+    <script src="js/main.js"></script>
+  </head>
+  <body>
+    <div class="studentDash" action="/facultyDash">
+      <div class="side-nav">
+        <div class="userProfile">
+          <img src="images/flower.jpg" alt="userImage" class="userImage" />
+          <div>
+            <h2 name="userName">Salvin Thilak S</h2>
+          </div>
+          <img src="images/star.png" class="starImg" />
+        </div>
+        <ul class="dashPng">
+          <li>
+            <a href="/facultyDash"
+              ><img src="images/dashboard.png" alt="Dashboard" />
+              <p>Dashboard</p></a
+            >
+          </li>
+          <li>
+            <a href="/markAttendance"
+              ><img src="images/profile.png" alt="Profile" />
+              <p>My Class</p></a
+            >
+          </li>
+          <li>
+            <a href="faculty_stats.html"
+              ><img src="images/reports.png" alt="Reports" />
+              <p>Statistics</p></a
+            >
+          </li>
+          <li>
+            <a href="#"
+              ><img src="images/message.png" alt="Messages" />
+              <p>Messages</p></a
+            >
+          </li>
+        </ul>
+        <ul class="dashPng">
+          <li>
+            <a href="/faculty"
+              ><img src="images/logout.png" alt="#" />
+              <p>Logout</p></a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div class="contentBox">
+        <div class="dashInfo">
+          <div>
+            <h3>Hello ,</h3>
+            <h2 name="userName" style="font-size: 1.5em">Salvin Thilak S</h2>
+          </div>
+          <div style="display: flex; flex-direction: row; align-items: center">
+            <img src="images/flower.jpg" alt="userImage" class="userImage" />
+          </div>
+        </div>
+        <div class="topInfo">
+          <div class="basicInfo tHoursToday">
+            <span class="material-symbols-outlined"> stacked_line_chart </span>
+            <h3><b>Total Hours</b></h3>
+            <h1><b>0 hrs 30 min</b></h1>
+            <p>Today</p>
+            <div class="tHoursTodayPer">
+              <svg>
+                <circle cx="38" cy="38" r="35"></circle>
+              </svg>
+              <p>90%</p>
+            </div>
+          </div>
+          <div class="basicInfo tHoursMonth">
+            <span class="material-symbols-outlined"> analytics </span>
+            <h3><b>Total Hours</b></h3>
+            <h1><b>3 hrs 20 min</b></h1>
+            <p>Last 1 Month</p>
+            <div class="tHoursMonthPer">
+              <svg>
+                <circle cx="40" cy="40" r="35"></circle>
+              </svg>
+              <p>80%</p>
+            </div>
+          </div>
+          <div class="basicInfo tClassToday">
+            <span class="material-symbols-outlined"> book </span>
+            <h3><b>Total Classes</b></h3>
+            <h1><b>4 Classes</b></h1>
+            <p>Today</p>
+            <div class="tClassTodayPer">
+              <svg>
+                <circle cx="38" cy="38" r="35"></circle>
+              </svg>
+              <p>30%</p>
+            </div>
+          </div>
+          <div class="basicInfo tClassMonth">
+            <span class="material-symbols-outlined"> menu_book </span>
+            <h3><b>Total Classes</b></h3>
+            <h1><b>30 Classes</b></h1>
+            <p>Last 1 Month</p>
+            <div class="tClassMonthPer">
+              <svg>
+                <circle cx="38" cy="38" r="35"></circle>
+              </svg>
+              <p>50%</p>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="upcomingClass">
+          <h2>Upcoming Class</h2>
+          <div class="upcomingClassInfo">
+            <h3 name="subName">Computer Architecture</h3>
+            <h5 name="className">BCA C Section</h5>
+            <div class="startclass"><button>Start Class</button></div>
+          </div>
+        </div> -->
+        <div class="recentInfo">
+          <h2>Recent Classes</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Course</th>
+                <th>Year</th>
+                <th>Section</th>
+                <th>Today's Status</th>
+                <th>Attendance</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>BCA</td>
+                <td>3rd Year</td>
+                <td>A Section</td>
+                <td class="onRoll">Active</td>
+                <td class="totalRoll">5</td>
+                <td class="studentInfo">Details</td>
+              </tr>
+              <tr>
+                <td>BCA</td>
+                <td>2nd Year</td>
+                <td>B Section</td>
+                <td class="onRoll">Active</td>
+                <td class="totalRoll">5</td>
+                <td class="studentInfo">Details</td>
+              </tr>
+              <tr>
+                <td>BCA</td>
+                <td>3rd Year</td>
+                <td>C Section</td>
+                <td class="onRoll">Active</td>
+                <td class="totalRoll">5</td>
+                <td class="studentInfo">Details</td>
+              </tr>
+            </tbody>
+          </table>
+          <a href="faculty_stats.html">Show More</a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
